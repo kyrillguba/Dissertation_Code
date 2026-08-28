@@ -1,0 +1,7 @@
+method,family,training_duration,planned_epochs,selected_checkpoint_epoch,checkpoint,parameter_count,solver_iterations,lambda_min,lambda_max
+U-TV (20e),U-TV,short,20,20,/Users/kyrillguba/Documents/Data Analytics MSc/Thesis/Python/cleaned_pipeline/checkpoints/u_tv/u_tv_best.pth,1925025,64,,
+U-TV (final),U-TV,long,300,277,/Users/kyrillguba/Documents/Data Analytics MSc/Thesis/Python/cleaned_pipeline/checkpoints/u_tv_e300_resumed_from_e200/u_tv_best.pth,1925025,64,,
+U-TGV (20e),U-TGV,short,20,20,/Users/kyrillguba/Documents/Data Analytics MSc/Thesis/Python/cleaned_pipeline/checkpoints/u_tgv/u_tgv_best.pth,1925058,64,,
+U-TGV (final),U-TGV,long,300,286,/Users/kyrillguba/Documents/Data Analytics MSc/Thesis/Python/cleaned_pipeline/checkpoints/u_tgv_e300_resumed_from_e200/u_tgv_best.pth,1925058,64,,
+U-Tikhonov T16/CG32 (20e),U-Tikhonov T16/CG32,short,20,19,/Users/kyrillguba/Documents/Data Analytics MSc/Thesis/Python/cleaned_pipeline/checkpoints/u_tikhonov_bounded_x16_cg32/u_tikhonov_best.pth,1925025,32,0.0001,33.281341168830465
+U-Tikhonov T16/CG32 (final),U-Tikhonov T16/CG32,long,300,249,/Users/kyrillguba/Documents/Data Analytics MSc/Thesis/Python/cleaned_pipeline/checkpoints/u_tikhonov_bounded_x16_cg32_e300_resumed_from_e200/u_tikhonov_best.pth,1925025,32,0.0001,33.281341168830465

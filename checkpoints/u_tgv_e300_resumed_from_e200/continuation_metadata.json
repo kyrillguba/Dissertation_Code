@@ -1,0 +1,28 @@
+{
+  "method": "U-TGV",
+  "model_name": "u_tgv",
+  "source_latest": "/Users/kyrillguba/Documents/Data Analytics MSc/Thesis/Python/cleaned_pipeline/checkpoints/u_tgv_e200_resumed_from_e100/u_tgv_latest.pth",
+  "source_best": "/Users/kyrillguba/Documents/Data Analytics MSc/Thesis/Python/cleaned_pipeline/checkpoints/u_tgv_e200_resumed_from_e100/u_tgv_best.pth",
+  "current_resume_path": "/Users/kyrillguba/Documents/Data Analytics MSc/Thesis/Python/cleaned_pipeline/checkpoints/u_tgv_e200_resumed_from_e100/u_tgv_latest.pth",
+  "source_epoch": 200,
+  "target_epoch": 300,
+  "continuation_seed": 1000042,
+  "initial_source_checkpoint": true,
+  "rng_mode": "Restored saved RNG state from the current resume checkpoint.",
+  "protocol": "Same split, stochastic-noise stream, deterministic validation, architecture, PDHG depth, AdamW state, learning rate, weight decay and gradient clipping.",
+  "selection_rule": "Highest deterministic SeaTurtle validation PSNR over epochs 1-300.",
+  "test_separation": "DIV2K and DEAL results are not used for training-duration decisions.",
+  "prior_continuation": {
+    "method": "U-TGV",
+    "model_name": "u_tgv",
+    "initial_source_latest": "/Users/kyrillguba/Documents/Data Analytics MSc/Thesis/Python/cleaned_pipeline/checkpoints/u_tgv_e100_from_scratch/u_tgv_latest.pth",
+    "initial_source_best": "/Users/kyrillguba/Documents/Data Analytics MSc/Thesis/Python/cleaned_pipeline/checkpoints/u_tgv_e100_from_scratch/u_tgv_best.pth",
+    "current_resume_path": "/Users/kyrillguba/Documents/Data Analytics MSc/Thesis/Python/cleaned_pipeline/checkpoints/u_tgv_e100_from_scratch/u_tgv_latest.pth",
+    "initial_source_epoch": 100,
+    "target_epoch": 200,
+    "continuation_seed": 1000042,
+    "initial_source_checkpoint": true,
+    "protocol": "Same split, stochastic-noise distribution, deterministic validation, architecture, solver, AdamW state, LR, weight decay and gradient clipping.",
+    "rng_caveat": "Original source lacks RNG state; first continuation begins a documented new stochastic stream. New checkpoints save RNG state."
+  }
+}

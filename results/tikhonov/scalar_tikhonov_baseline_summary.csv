@@ -1,0 +1,2 @@
+best_scalar_lambda,validation_mse,validation_psnr,validation_ssim,average_converged_cg_iters,minimum_converged_cg_iters,maximum_converged_cg_iters,recommended_fixed_cg_iters,validation_sigma,validation_noise_seed
+2.080083823051904,0.0011026597610907629,29.93283176422119,0.7754274845123291,26.44,25,28,32,0.1,10000

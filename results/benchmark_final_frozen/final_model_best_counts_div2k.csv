@@ -1,0 +1,33 @@
+sigma,metric,method,images,exclusive_best_count,tied_best_count,best_or_tied_count,exclusive_best_percentage
+0.05,PSNR,U-TV (final),100,0,0,0,0.0
+0.05,PSNR,U-TGV (final),100,0,0,0,0.0
+0.05,PSNR,U-Tikhonov T16/CG32 (final),100,0,0,0,0.0
+0.05,PSNR,DEAL (official pretrained),100,100,0,100,100.0
+0.05,SSIM,U-TV (final),100,0,0,0,0.0
+0.05,SSIM,U-TGV (final),100,1,0,1,1.0
+0.05,SSIM,U-Tikhonov T16/CG32 (final),100,0,0,0,0.0
+0.05,SSIM,DEAL (official pretrained),100,99,0,99,99.0
+0.1,PSNR,U-TV (final),100,0,0,0,0.0
+0.1,PSNR,U-TGV (final),100,1,0,1,1.0
+0.1,PSNR,U-Tikhonov T16/CG32 (final),100,0,0,0,0.0
+0.1,PSNR,DEAL (official pretrained),100,99,0,99,99.0
+0.1,SSIM,U-TV (final),100,0,0,0,0.0
+0.1,SSIM,U-TGV (final),100,3,0,3,3.0
+0.1,SSIM,U-Tikhonov T16/CG32 (final),100,0,0,0,0.0
+0.1,SSIM,DEAL (official pretrained),100,97,0,97,97.0
+0.15,PSNR,U-TV (final),100,0,0,0,0.0
+0.15,PSNR,U-TGV (final),100,2,0,2,2.0
+0.15,PSNR,U-Tikhonov T16/CG32 (final),100,0,0,0,0.0
+0.15,PSNR,DEAL (official pretrained),100,98,0,98,98.0
+0.15,SSIM,U-TV (final),100,1,0,1,1.0
+0.15,SSIM,U-TGV (final),100,9,0,9,9.0
+0.15,SSIM,U-Tikhonov T16/CG32 (final),100,1,0,1,1.0
+0.15,SSIM,DEAL (official pretrained),100,89,0,89,89.0
+0.2,PSNR,U-TV (final),100,0,0,0,0.0
+0.2,PSNR,U-TGV (final),100,4,0,4,4.0
+0.2,PSNR,U-Tikhonov T16/CG32 (final),100,3,0,3,3.0
+0.2,PSNR,DEAL (official pretrained),100,93,0,93,93.0
+0.2,SSIM,U-TV (final),100,1,0,1,1.0
+0.2,SSIM,U-TGV (final),100,21,0,21,21.0
+0.2,SSIM,U-Tikhonov T16/CG32 (final),100,5,0,5,5.0
+0.2,SSIM,DEAL (official pretrained),100,73,0,73,73.0

@@ -1,0 +1,4 @@
+method,device_description,solver_iterations,mean_runtime_ms_per_image,std_runtime_ms_per_image,median_runtime_ms_per_image,training_minutes
+U-TV,Apple Metal Performance Shaders (MPS),64,32.57874907954829,0.7260652759609604,32.565978997809,25.367321306249746
+U-TGV,Apple Metal Performance Shaders (MPS),64,84.46744502005458,2.384119788292077,83.36879149828746,63.912221250698586
+U-Tikhonov x16 CG32,Apple Metal Performance Shaders (MPS),32,58.55535076007072,0.2740046154587608,58.512479001365136,26.61126924721666

@@ -1,0 +1,2 @@
+lambda_star,validation_mse,validation_psnr,validation_ssim,selected_fixed_cg_iterations
+2.080083823051904,0.0011026597610907,29.93283176422119,0.7754274845123291,32

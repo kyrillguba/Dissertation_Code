@@ -1,0 +1,13 @@
+{
+  "method": "U-Tikhonov T16/CG32",
+  "model_name": "u_tikhonov",
+  "initial_source_latest": "/Users/kyrillguba/Documents/Data Analytics MSc/Thesis/Python/cleaned_pipeline/checkpoints/u_tikhonov_bounded_x16_cg32_e200_from_scratch/u_tikhonov_latest.pth",
+  "initial_source_best": "/Users/kyrillguba/Documents/Data Analytics MSc/Thesis/Python/cleaned_pipeline/checkpoints/u_tikhonov_bounded_x16_cg32_e200_from_scratch/u_tikhonov_best.pth",
+  "current_resume_path": "/Users/kyrillguba/Documents/Data Analytics MSc/Thesis/Python/cleaned_pipeline/checkpoints/u_tikhonov_bounded_x16_cg32_e200_from_scratch/u_tikhonov_latest.pth",
+  "initial_source_epoch": 200,
+  "target_epoch": 300,
+  "continuation_seed": 1000042,
+  "initial_source_checkpoint": true,
+  "protocol": "Same split, stochastic-noise distribution, deterministic validation, architecture, solver, AdamW state, LR, weight decay and gradient clipping.",
+  "rng_caveat": "Original source lacks RNG state; first continuation begins a documented new stochastic stream. New checkpoints save RNG state."
+}

@@ -1,0 +1,5 @@
+method,device,device_description,parameter_count,timed_measurements,timed_images_per_repeat,mean_runtime_ms_per_image,std_runtime_ms_per_image,median_runtime_ms_per_image,images_per_second,solver_iterations
+U-Tikhonov T4/CG32,mps,Apple Metal Performance Shaders (MPS),1925025,50,10,59.529277465771884,0.29918899921569503,59.523853939026594,16.798456869814682,32
+U-Tikhonov T4/CG64,mps,Apple Metal Performance Shaders (MPS),1925025,50,10,108.5377641976811,1.5191408158406567,108.60922955907881,9.213383078157833,64
+U-Tikhonov T16/CG32,mps,Apple Metal Performance Shaders (MPS),1925025,50,10,59.313522467855364,0.2428268020851704,59.252791514154524,16.859561840083675,32
+U-Tikhonov T16/CG64,mps,Apple Metal Performance Shaders (MPS),1925025,50,10,111.81437994120643,4.404508280738921,110.34664598992094,8.943393510976085,64

@@ -1,0 +1,4 @@
+method,epochs_run,best_epoch,best_val_psnr,total_training_hours,mean_epoch_seconds,solver_iterations,best_checkpoint
+U-TV,200,197,31.95327434539795,4.224049624826391,75.96027520790346,64,/Users/kyrillguba/Documents/Data Analytics MSc/Thesis/Python/cleaned_pipeline/checkpoints/u_tv_e200_from_scratch/u_tv_best.pth
+U-TGV,100,100,31.64077117919922,5.306386315208334,190.9561361258203,64,/Users/kyrillguba/Documents/Data Analytics MSc/Thesis/Python/cleaned_pipeline/checkpoints/u_tgv_e100_from_scratch/u_tgv_best.pth
+U-Tikhonov T16/CG32,200,185,32.12489013671875,4.456266955080832,80.14209377670718,32,/Users/kyrillguba/Documents/Data Analytics MSc/Thesis/Python/cleaned_pipeline/checkpoints/u_tikhonov_bounded_x16_cg32_e200_from_scratch/u_tikhonov_best.pth

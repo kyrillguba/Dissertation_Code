@@ -1,0 +1,7 @@
+method,device,device_description,parameter_count,timed_measurements,timed_images_per_repeat,mean_runtime_ms_per_image,std_runtime_ms_per_image,median_runtime_ms_per_image,images_per_second,solver_iterations
+U-TV (20e),mps,Apple Metal Performance Shaders (MPS),1925025,50,10,33.528253401163965,0.7399113331971832,33.90102047706023,29.825591808647093,64
+U-TV (final),mps,Apple Metal Performance Shaders (MPS),1925025,50,10,33.56820436078124,0.6798307183193352,33.875354507472366,29.790095092733964,64
+U-TGV (20e),mps,Apple Metal Performance Shaders (MPS),1925058,50,10,89.48468253598548,0.6592373733674125,89.60810449207202,11.175096917820083,64
+U-TGV (final),mps,Apple Metal Performance Shaders (MPS),1925058,50,10,89.44660496315919,0.64272600692529,89.57689549424686,11.179854175704879,64
+U-Tikhonov T16/CG32 (20e),mps,Apple Metal Performance Shaders (MPS),1925025,50,10,59.05458764289506,0.8036685390495582,59.29720852873288,16.93348543972623,32
+U-Tikhonov T16/CG32 (final),mps,Apple Metal Performance Shaders (MPS),1925025,50,10,59.37409498146735,0.2706372683222005,59.328500006813556,16.842361981469082,32

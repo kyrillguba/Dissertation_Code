@@ -1,0 +1,2 @@
+model_name,device,device_description,torch_version,parameter_count,epochs,training_images,validation_images,best_epoch,best_val_psnr,total_time_sec,mean_epoch_time_sec,mean_train_phase_time_sec,mean_validation_time_sec,mean_train_images_per_sec,solver_iterations
+u_tgv,mps,Apple Metal Performance Shaders (MPS),2.12.0,1925058,20,500,50,20,31.40984973907471,3834.7332750419155,191.65615599364975,185.2529241916258,6.402813918585889,2.699193419667556,64

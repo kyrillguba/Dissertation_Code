@@ -1,0 +1,3 @@
+window_epochs,psnr_slope_db_per_epoch,estimated_change_over_window_db,window_start_epoch,window_end_epoch
+20,0.00031748345740735426,0.006032185690739731,281,300
+50,0.0002379665067931339,0.01166035883286356,251,300

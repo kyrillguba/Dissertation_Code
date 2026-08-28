@@ -1,0 +1,5 @@
+method,checkpoint,selected_epoch,lambda_max,cg_iterations
+U-Tikhonov T4/CG32,/Users/kyrillguba/Documents/Data Analytics MSc/Thesis/Python/cleaned_pipeline/checkpoints/u_tikhonov_bounded_x4_cg32_e300_resumed_from_e200/u_tikhonov_best.pth,259,8.320335292207616,32
+U-Tikhonov T4/CG64,/Users/kyrillguba/Documents/Data Analytics MSc/Thesis/Python/cleaned_pipeline/checkpoints/u_tikhonov_bounded_x4_cg64_e300_resumed_from_e200/u_tikhonov_best.pth,293,8.320335292207616,64
+U-Tikhonov T16/CG32,/Users/kyrillguba/Documents/Data Analytics MSc/Thesis/Python/cleaned_pipeline/checkpoints/u_tikhonov_bounded_x16_cg32_e300_resumed_from_e200/u_tikhonov_best.pth,249,33.281341168830465,32
+U-Tikhonov T16/CG64,/Users/kyrillguba/Documents/Data Analytics MSc/Thesis/Python/cleaned_pipeline/checkpoints/u_tikhonov_bounded_x16_cg64_e300_resumed_from_e200/u_tikhonov_best.pth,269,33.281341168830465,64

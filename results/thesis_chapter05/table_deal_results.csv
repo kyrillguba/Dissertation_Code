@@ -1,0 +1,5 @@
+sigma,mean_psnr,mean_ssim,psnr_exclusive_best,ssim_exclusive_best
+0.05,31.895,0.9479,100,99
+0.1,28.014,0.8872,99,98
+0.15,25.736,0.8261,99,97
+0.2,24.011,0.7643,95,86

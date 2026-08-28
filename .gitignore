@@ -1,0 +1,73 @@
+# macOS files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Python caches and generated files
+__pycache__/
+*.py[cod]
+*.so
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Jupyter temporary checkpoints
+.ipynb_checkpoints/
+
+# Local environments and secrets
+.venv/
+venv/
+env/
+.env
+.env.*
+!.env.example
+
+# Editor settings
+.vscode/
+.idea/
+
+# Local Anaconda metadata
+/anaconda_projects/
+
+# Raw datasets
+/data/
+
+# Archives and logs
+*.zip
+*.tar
+*.tar.gz
+*.log
+/repository_inventory.txt
+
+# Project-trained model weights
+/checkpoints/**/*.pth
+/checkpoints/**/*.pt
+/checkpoints/**/*.ckpt
+
+# Retain the official DEAL model used for inference
+!/checkpoints/deal_official/
+!/checkpoints/deal_official/deal_gray.pth
+
+# Superseded result directories
+/results/benchmark_v1/
+/results/benchmark_long_vs_short/
+/results/div2k/
+
+# Retain only the useful cached official-DEAL tables
+/results/benchmark_v1_with_official_deal/*
+!/results/benchmark_v1_with_official_deal/benchmark_manifest.csv
+!/results/benchmark_v1_with_official_deal/per_image_metrics.csv
+!/results/benchmark_v1_with_official_deal/method_summary_div2k.csv
+
+# Internal integration documentation
+/CODE_REVIEW.md
+/INSTALL_OVERLAY.md
+/INTEGRATION_MANIFEST.md
+# Archived and superseded notebooks
+/notebooks/archive(old results)/
+
+# One-off notebook construction and integration utilities
+/scripts/build_thesis_experiment_notebooks.py
+/scripts/integrate_official_deal_notebook.py
