@@ -12,7 +12,6 @@ from:
 - Mehrsa Pourya, Erich Kobler, Michael Unser, and Sebastian Neumayer,
   “DEALing with Image Reconstruction: Deep Attentive Least Squares”, 2025.
 - Repository: <https://github.com/mehrsapo/DEAL>
-- Vendored commit: `554820ca356ff8a78bc49097e3ffcba3875a3ac2`
 
 The upstream DEAL repository is distributed under the MIT License. A copy of
 that licence is retained at:
