@@ -62,10 +62,8 @@ neural parameter-map predictor with an unrolled TGV reconstruction solver and
 for interpreting the two learned TGV parameter maps.
 
 The local U-TGV implementation forms part of this dissertation's shared
-PyTorch pipeline. No upstream source files from the Trung-Vu repository are
-included in the vendored `src/third_party/` directory. The paper and repository
-are therefore acknowledged as methodological and software-design influences
-rather than as bundled third-party components.
+PyTorch pipeline. The paper and repository are acknowledged as methodological and software-design influences
+for incorporating the U-TGV model.
 
 ## 3. Learning regularisation-parameter maps: methodological predecessor
 
@@ -87,9 +85,6 @@ The upstream repository is licensed under the Apache License 2.0.
 This work is acknowledged as a methodological and software-design predecessor
 for predicting spatially adaptive regularisation maps and incorporating them
 into differentiable unrolled reconstruction algorithms.
-
-No source files from this repository are included in the vendored
-`src/third_party/` directory.
 
 ## 4. Datasets
 
