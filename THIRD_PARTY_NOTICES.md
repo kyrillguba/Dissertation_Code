@@ -67,10 +67,6 @@ included in the vendored `src/third_party/` directory. The paper and repository
 are therefore acknowledged as methodological and software-design influences
 rather than as bundled third-party components.
 
-If any direct source adaptation is identified in a later revision, the
-affected local file must be identified explicitly and the relevant Apache-2.0
-copyright and licence notices retained.
-
 ## 3. Learning regularisation-parameter maps: methodological predecessor
 
 The shared parameter-map and algorithm-unrolling design was also informed by:
