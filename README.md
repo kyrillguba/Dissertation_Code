@@ -1,85 +1,90 @@
-# Cleaned U-TV / U-TGV / U-Tikhonov pipeline with official DEAL reference
+# Learned Variational Image Denoising
 
-This version uses one shared experiment pipeline for the three project-trained
-variational denoisers and optionally evaluates the authors' official pretrained
-grayscale DEAL checkpoint as an external state-of-the-art reference.
+This repository contains the code, executed notebooks, tests, training records,
+and selected results accompanying an MSc dissertation on learned spatially
+adaptive variational methods for grayscale image denoising.
 
-## Shared experiment contract
+The principal contribution is **U-Tikhonov**, which combines a U-Net-predicted
+spatial regularisation map with an unrolled conjugate-gradient reconstruction
+solver. It is evaluated alongside learned total variation (U-TV), learned total
+generalised variation (U-TGV), scalar Tikhonov regularisation, and the authors'
+official pretrained DEAL model as an external reference.
 
-- SeaTurtleID2022 is selected and split once with `seed=42`.
-- Training noise is sampled on the fly with one
-  `sigma ~ Uniform(sigma_min, sigma_max)` per image.
-- Validation uses a fixed `sigma=0.1` and a deterministic per-image noise seed.
-- All models use the same configurable U-Net. U-TV/U-TGV use scaled softplus;
-  U-Tikhonov supports both the historical scaled-softplus map and a bounded
-  sigmoid map initialized exactly at the scalar-reference lambda.
-- Training uses raw solver reconstructions and MSE loss.
-- Reconstructions are clipped to `[0, 1]` only for metrics and display.
-- MSE, PSNR and SSIM are computed per image and then averaged.
-- All scripts use AdamW, the same history schema, PSNR model selection, and
-  `{model}_latest.pth` / `{model}_best.pth` checkpoint payloads.
+## Methods
 
-## Structure
+| Method | Learned parameters | Reconstruction solver |
+| --- | --- | --- |
+| U-TV | One spatial TV parameter map | Unrolled PDHG |
+| U-TGV | Two spatial TGV parameter maps | Unrolled PDHG |
+| U-Tikhonov | One bounded spatial quadratic-regularisation map | Unrolled conjugate gradient |
+| DEAL | Official pretrained filters and attention masks | Official convergence-controlled solver |
 
-- `src/data/denoising_dataset.py`: shared loading, stochastic training noise,
-  and fixed validation noise.
-- `src/training/denoising.py`: shared split, loaders, training, validation,
-  history, and checkpoints.
-- `src/evaluation/denoising_eval.py`: common learned-model evaluation.
-- `src/data/benchmark_dataset.py`: deterministic multi-noise DIV2K/geometric
-  benchmark samples, checksums, and optional unreferenced real-noise loading.
-- `src/evaluation/benchmark.py`: checkpoint reconstruction, paired statistics,
-  win counts, bootstrap confidence intervals, and synchronized runtime timing.
-- `src/models/deal_official.py`: hash-verified adapter for the official DEAL
-  checkpoint, exact noise-unit conversion, MPS-safe spectral normalization,
-  nested solver diagnostics, and attention summaries.
-- `src/third_party/deal_official/`: minimally packaged official inference code
-  under the authors' MIT licence.
-- `src/operators/finite_differences.py`: one finite-difference convention used
-  by PDHG and CG.
-- `scripts/train_u_*.py`: thin model-specific entry points.
-- `notebooks/01_train_u_tv_u_tgv.ipynb`: train U-TV and U-TGV.
-- `notebooks/02_test_u_tv_u_tgv_div2k.ipynb`: common DIV2K evaluation and
-  qualitative parameter-map figures.
-- `notebooks/03_scalar_tikhonov_baseline.ipynb`: scalar-lambda selection and
-  fixed-CG iteration study.
-- `notebooks/04_train_u_tikhonov.ipynb`: train U-Tikhonov from the selected
-  scalar reference.
-- `notebooks/05_test_u_tikhonov_div2k.ipynb`: DIV2K evaluation of scalar and
-  learned Tikhonov.
-- `notebooks/06_train_u_tikhonov_highbound.ipynb`: second bounded
-  U-Tikhonov run with `lambda_max=16*reference_lambda`, 64 CG iterations,
-  standardized time logging, and a post-training converged-CG audit.
-- `notebooks/07_unified_denoising_benchmark.ipynb`: canonical, checksum-verified
-  comparison of every learned method on all 100 DIV2K validation images at
-  sigma 0.05/0.10/0.15/0.20, geometric phantoms, and optional real-noise
-  images.
-- `notebooks/07_unified_denoising_benchmark_with_official_deal.ipynb`: separate
-  complete benchmark variant that adds the official checkpoint without
-  overwriting or removing sections from the existing Notebook 07.
+U-TV, U-TGV, and U-Tikhonov use a common training and evaluation pipeline.
+DEAL is not retrained in this project and is therefore reported as an
+**external pretrained reference**, rather than a training-controlled baseline.
 
-Read `OFFICIAL_DEAL_INFERENCE_GUIDE.md` before running the DEAL variant. Run its
-single-image timing pilot first, then continue with the full benchmark if the
-projected runtime is practical on the selected device.
+## Experimental protocol
 
-Run the notebooks in numerical order. They locate `cleaned_pipeline`
-automatically whether Jupyter starts in `Thesis/Python`, `cleaned_pipeline`, or
-`cleaned_pipeline/notebooks`. New checkpoints and results stay inside the
-cleaned project. DIV2K may remain under the sibling `First Try` folder; the test
-notebooks locate `DIV2K_valid_HR` there without importing any old code.
+The project models are trained on grayscale images from SeaTurtleID2022,
+resized to 256 × 256 pixels. Training noise is sampled independently for each
+image, while validation noise is deterministic.
 
-Notebook 07 is the source of truth for thesis comparison tables. Notebooks 02
-and 05 remain useful for historical single-run figures, but separate notebooks
-should not be used to construct the final cross-method statistics.
+Final evaluation uses the 100-image DIV2K validation set at Gaussian noise
+levels
 
-The official DEAL result controls only the evaluation inputs and metrics. Its
-training data, training budget, optimizer schedule, and capacity are not
-matched to U-TV, U-TGV, or U-Tikhonov; label it "official pretrained external
-reference", not a controlled baseline.
+```text
+sigma = 0.05, 0.10, 0.15, 0.20
+```
 
-## Example commands
+and a generated geometric-shape benchmark. MSE, PSNR, and SSIM are calculated
+per image before aggregation. Paired comparisons use identical clean images
+and noise realisations for every method.
 
-Run these from the project root:
+The principal models and the four U-Tikhonov configurations in the 2 × 2
+ablation were continued to 300 epochs before the final benchmarks.
+
+## Repository structure
+
+```text
+checkpoints/    Checkpoint metadata and the official DEAL checkpoint
+notebooks/      Final numbered experimental notebooks
+results/        Selected canonical results, tables, and thesis figures
+scripts/        Command-line training entry points
+src/            Datasets, models, operators, solvers, training, and evaluation
+tests/          Numerical and pipeline tests
+```
+
+The original datasets and project-trained model weights are not stored in
+ordinary Git history. Training histories, configuration summaries, continuation
+metadata, final tables, and selected figures are retained.
+
+## Installation
+
+Create the recorded Conda environment:
+
+```bash
+conda env create -f environment.yml
+conda activate dissertation-code
+```
+
+The final local pipeline was validated using Python 3.13.9 on macOS.
+
+## Data
+
+The repository does not redistribute SeaTurtleID2022 or DIV2K.
+
+Download the datasets from their official sources and set the corresponding
+dataset paths in the notebooks or command-line arguments:
+
+- SeaTurtleID2022 is used for project-model training and validation.
+- `DIV2K_valid_HR` is used for held-out natural-image evaluation.
+- Geometric benchmark images are generated by the pipeline.
+
+Local absolute paths are deliberately not committed to the repository.
+
+## Training scripts
+
+The three project models can be trained from the repository root:
 
 ```bash
 python scripts/train_u_tv.py --data-root /path/to/seaturtleid2022
@@ -87,33 +92,117 @@ python scripts/train_u_tgv.py --data-root /path/to/seaturtleid2022
 python scripts/train_u_tikhonov.py --data-root /path/to/seaturtleid2022
 ```
 
-For a quick local smoke run, add:
+Run the scripts with `--help` to inspect their configurable model, solver, data,
+and optimisation arguments.
+
+## Final notebook sequence
+
+The notebooks should be read in numerical order:
+
+| Notebook | Purpose |
+| --- | --- |
+| `01_train_utv_utgv.ipynb` | Initial U-TV and U-TGV training |
+| `02_scalar_tikhonov_baseline.ipynb` | Scalar Tikhonov calibration and CG-depth study |
+| `03_train_u_tikhonov.ipynb` | Initial U-Tikhonov training |
+| `04a_train_u_tikhonov_highbound.ipynb` | Higher-bound U-Tikhonov configuration |
+| `04b_train_u_tikhonov_ablation.ipynb` | U-Tikhonov parameter-bound and CG-depth ablation |
+| `05a_retrain_principal_models_long.ipynb` | Longer training of the principal models |
+| `05b_resume_principal_models.ipynb` | Continuation of the principal training runs |
+| `05c_continue_u_tgv_e300.ipynb` | Completion of U-TGV training to epoch 300 |
+| `06_final_held_out_benchmark.ipynb` | Final held-out comparison of the principal models and DEAL |
+| `07_continue_u_tikhonov_2x2_to_e300.ipynb` | Continuation of the 2 × 2 U-Tikhonov models |
+| `08_benchmark_convergence_matched_u_tikhonov_2x2.ipynb` | Final convergence-matched U-Tikhonov ablation benchmark |
+
+Notebook 06 is the source of the final principal-model benchmark. Notebook 08
+is the source of the final U-Tikhonov ablation comparison.
+
+The committed notebooks retain their executed outputs so that the reported
+results can be inspected without rerunning long training jobs.
+
+## Results
+
+The principal retained result directories are:
+
+- `results/benchmark_final_frozen/`: final principal-model benchmark;
+- `results/u_tikhonov_convergence_matched_2x2/`: final U-Tikhonov ablation;
+- `results/tikhonov/`: scalar calibration and CG-depth study;
+- `results/training/`: training curves and continuation summaries;
+- `results/thesis_chapter05/`: thesis-facing figures and tables.
+
+Notebook 06 uses checksum-verified official-DEAL rows retained in:
 
 ```text
---image-size 128 --max-images 30 --val-images 5 --base-channels 16
---epochs 2
+results/benchmark_v1_with_official_deal/
 ```
 
-and use `--num-pdhg-iters 10` for U-TV/U-TGV or `--cg-iters 10` for
-U-Tikhonov.
+The complete official DEAL solve is substantially slower than the fixed-depth
+project solvers, so the final notebook validates and reuses the previously
+computed per-image results.
 
-## Compatibility notes
+## Checkpoints
 
-- U-TV and U-TGV still expose `train(args)` aliases.
-- U-Tikhonov still exposes `WeightedTikhonovCGDenoiser`, `lambda_net`, and the
-  earlier deterministic-noise evaluation helper.
-- Training functions now consistently return `(model, history_dataframe)`.
-- `UNetSmall` remains as a lightweight alias rather than a duplicated network.
-- `finite_differences_tikhonov.py` remains as a compatibility wrapper; all new
-  solver code uses the shared operator module.
+The official grayscale DEAL checkpoint is retained at:
 
-Run the numerical checks locally with:
+```text
+checkpoints/deal_official/deal_gray.pth
+```
+
+Project-trained `.pth` files are excluded from normal Git history because of
+their cumulative size. They can be regenerated by the training notebooks or
+distributed separately as release or archival assets.
+
+Checkpoint histories, training summaries, continuation metadata, and
+post-training numerical audits remain in `checkpoints/`.
+
+## Tests
+
+Run the test suite from the repository root:
 
 ```bash
-PYTHONPATH=. python -m unittest discover -s tests -v
+python -m pytest tests/test_pipeline.py -v
 ```
 
-Training now writes both `history.csv` and `training_summary.csv`. Timers are
-synchronized on CUDA/MPS and separate optimization, validation, whole-epoch,
-and cumulative time. Notebook 07 adds a same-device inference benchmark with
-fixed batch size, warmups, repeats, and solver-iteration metadata.
+The tests cover:
+
+- finite-difference adjoint identities;
+- positive definiteness of the weighted Tikhonov operator;
+- conjugate-gradient residual accuracy;
+- deterministic validation and benchmark noise;
+- model interfaces and gradient propagation;
+- bounded U-Tikhonov initialisation;
+- official DEAL checkpoint loading and a small forward solve;
+- paired benchmark statistics.
+
+The validated local environment passes all 11 tests.
+
+## DEAL comparison
+
+The DEAL implementation is the authors' released pretrained grayscale model.
+The adapter verifies the checkpoint hash and parameter count before inference
+and follows the official denoising protocol.
+
+The evaluation inputs and metrics are shared with the project methods, but the
+training conditions are not. DEAL was trained externally using a larger
+training corpus and a different training budget. Potential overlap between its
+training data and DIV2K also cannot be ruled out from the public information.
+Its results must therefore be interpreted as an external reference rather than
+a fair training-controlled baseline.
+
+## Attribution
+
+Official DEAL inference files are vendored under
+`src/third_party/deal_official/` and retain their MIT licence.
+
+The work of Thanh Trung Vu, Andreas Kofler, Kostas Papafitsoros, and the earlier
+regularisation-parameter-map project led by Andreas Kofler informed the
+methodological and software design of the U-TV/U-TGV pipeline.
+
+See [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md) for the exact distinction
+between vendored source code, local project code, and methodological/software
+influences.
+
+## Licence status
+
+No general open-source licence is currently granted for the dissertation's
+original code. The repository is initially private. Third-party components
+remain governed by their respective upstream licences.
