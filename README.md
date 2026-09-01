@@ -154,8 +154,7 @@ preserve the sample IDs, noise seeds, and tensor hashes needed to verify paired
 evaluation.
 
 Only results used to support the final dissertation and the records needed to
-audit them are retained. Exploratory map-correspondence and superseded
-short-versus-long-training outputs are not part of the reported analysis.
+audit them are retained. 
 
 ## Checkpoints
 
