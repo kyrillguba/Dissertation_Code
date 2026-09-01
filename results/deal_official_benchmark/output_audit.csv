@@ -1,0 +1,8 @@
+file,path,exists,size_bytes
+benchmark_manifest.csv,/Users/kyrillguba/Documents/Data Analytics MSc/Thesis/Python/cleaned_pipeline/results/deal_official_benchmark/benchmark_manifest.csv,True,129278
+model_configuration.csv,/Users/kyrillguba/Documents/Data Analytics MSc/Thesis/Python/cleaned_pipeline/results/deal_official_benchmark/model_configuration.csv,True,602
+per_image_metrics_deal_official.csv,/Users/kyrillguba/Documents/Data Analytics MSc/Thesis/Python/cleaned_pipeline/results/deal_official_benchmark/per_image_metrics_deal_official.csv,True,316783
+method_summary_div2k.csv,/Users/kyrillguba/Documents/Data Analytics MSc/Thesis/Python/cleaned_pipeline/results/deal_official_benchmark/method_summary_div2k.csv,True,1060
+deal_solver_diagnostics.csv,/Users/kyrillguba/Documents/Data Analytics MSc/Thesis/Python/cleaned_pipeline/results/deal_official_benchmark/deal_solver_diagnostics.csv,True,152287
+inference_timing_detail.csv,/Users/kyrillguba/Documents/Data Analytics MSc/Thesis/Python/cleaned_pipeline/results/deal_official_benchmark/inference_timing_detail.csv,True,845
+inference_time_comparison.csv,/Users/kyrillguba/Documents/Data Analytics MSc/Thesis/Python/cleaned_pipeline/results/deal_official_benchmark/inference_time_comparison.csv,True,585

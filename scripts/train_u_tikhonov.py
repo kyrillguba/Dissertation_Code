@@ -81,7 +81,7 @@ def train_u_tikhonov(args: argparse.Namespace, train_loader=None, val_loader=Non
     for name, value in {
         "cg_iters": 32,
         "cg_relative_tol": 1e-7,
-        "reference_lambda": 2.49805,
+        "reference_lambda": 2.080083823,
         "scalar_baseline_summary": None,
         "map_scale": None,
         "lambda_parameterization": "scaled_softplus",
@@ -141,7 +141,7 @@ def parse_args() -> argparse.Namespace:
     add_common_training_arguments(parser, checkpoint_dir="checkpoints/u_tikhonov")
     parser.add_argument("--cg-iters", type=int, default=32)
     parser.add_argument("--cg-relative-tol", type=float, default=1e-7)
-    parser.add_argument("--reference-lambda", type=float, default=2.49805)
+    parser.add_argument("--reference-lambda", type=float, default=2.080083823)
     parser.add_argument("--map-scale", type=float, default=None)
     parser.add_argument("--scalar-baseline-summary", type=str, default=None)
     parser.add_argument(

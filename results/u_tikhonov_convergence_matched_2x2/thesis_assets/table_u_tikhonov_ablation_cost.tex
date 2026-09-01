@@ -1,0 +1,15 @@
+\begin{table}[htbp]
+\centering
+\caption{Recorded computational cost of the convergence-matched U-Tikhonov $2\times2$ ablation. Training time is the sum of the recorded per-epoch durations over the complete 300-epoch history. Inference time is the mean over ten DIV2K images at $\sigma=0.10$, with three warm-up passes and five timed repeats.}
+\label{tab:u_tikhonov_ablation_cost}
+\begin{tabular}{lrrr}
+\toprule
+Configuration & CG depth & Training time (h) & Mean inference (ms/image) \\
+\midrule
+T4/CG32 & 32 & 7.53 & 61.41 \\
+T16/CG32 & 32 & 6.90 & 60.09 \\
+T4/CG64 & 64 & 11.29 & 109.76 \\
+T16/CG64 & 64 & 11.37 & 114.61 \\
+\bottomrule
+\end{tabular}
+\end{table}

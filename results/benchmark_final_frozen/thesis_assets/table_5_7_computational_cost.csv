@@ -1,0 +1,5 @@
+Method,Solver effort,Training (h),Inference (ms)
+U-TV,64 PDHG iterations,6.55,34.23
+U-TGV,64 PDHG iterations,16.38,86.58
+U-Tikhonov T16/32,32 CG iterations,6.90,61.13
+DEAL (official),Adaptive outer/inner CG,--,11186

@@ -71,3 +71,9 @@ env/
 # One-off notebook construction and integration utilities
 /scripts/build_thesis_experiment_notebooks.py
 /scripts/integrate_official_deal_notebook.py
+
+# Exploratory outputs not retained in the submitted analysis
+/results/benchmark_final_frozen/duration_comparison_*.pdf
+/results/benchmark_final_frozen/final_minus_short_*.pdf
+/results/benchmark_final_frozen/final_models_geometric_phantom_gallery_sigma_0.05.pdf
+/results/tv_tikhonov_weight_correspondence/

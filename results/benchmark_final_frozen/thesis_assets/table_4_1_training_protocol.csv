@@ -1,0 +1,9 @@
+Setting,Value,Setting ,Value
+Training/validation images,500/50,Image size,$256\times256$
+Maximum epochs,300,Batch size,1
+Training noise,"$\mathcal{U}(0,0.2)$",Validation noise,$\sigma=0.1$
+Optimiser,AdamW,Learning rate,$10^{-4}$
+Weight decay,$10^{-5}$,Gradient-norm threshold,1.0
+Loss,MSE,Learning-rate schedule,None
+Initial data seed,42,Validation-noise seed,"$10{,}000+i$"
+Checkpoint criterion,Validation PSNR,Metric range,"$[0,1]$"

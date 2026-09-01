@@ -1,0 +1,10 @@
+method,repeat,batch_index,batch_size,runtime_sec,runtime_ms_per_image,outer_iterations,last_inner_iterations,total_inner_iterations
+DEAL (official pretrained),0,0,1,14.685391291000997,14685.391291000997,46,1,431
+DEAL (official pretrained),0,1,1,8.718526208002004,8718.526208002004,26,1,266
+DEAL (official pretrained),0,2,1,11.104682457997114,11104.682457997114,33,1,335
+DEAL (official pretrained),1,0,1,14.441061999998055,14441.061999998055,46,1,431
+DEAL (official pretrained),1,1,1,8.558732499994221,8558.732499994221,26,1,266
+DEAL (official pretrained),1,2,1,10.772634083987214,10772.634083987214,33,1,335
+DEAL (official pretrained),2,0,1,14.132789625000441,14132.789625000441,46,1,431
+DEAL (official pretrained),2,1,1,8.828716499992879,8828.71649999288,26,1,266
+DEAL (official pretrained),2,2,1,10.832595416999538,10832.595416999538,33,1,335

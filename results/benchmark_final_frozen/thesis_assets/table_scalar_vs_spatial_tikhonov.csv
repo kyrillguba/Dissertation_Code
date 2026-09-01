@@ -1,0 +1,4 @@
+Method,Mean MSE,Mean PSNR (dB),Mean SSIM
+Scalar Tikhonov,4.881e-03,23.772,0.7494
+U-Tikhonov T16/CG32,2.290e-03,26.826,0.8633
+Change,-53.1\%,+3.054,+0.1139

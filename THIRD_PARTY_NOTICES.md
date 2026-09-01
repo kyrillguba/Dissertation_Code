@@ -10,15 +10,15 @@ This repository includes inference files and the official grayscale checkpoint
 from:
 
 - Mehrsa Pourya, Erich Kobler, Michael Unser, and Sebastian Neumayer,
-  “DEALing with Image Reconstruction: Deep Attentive Least Squares”, 2025.
+  "DEALing with Image Reconstruction: Deep Attentive Least Squares", 2025.
 - Repository: <https://github.com/mehrsapo/DEAL>
+- Vendored commit: `554820ca356ff8a78bc49097e3ffcba3875a3ac2`
 
 The upstream DEAL repository is distributed under the MIT License. A copy of
 that licence is retained at:
 
 ```text
 src/third_party/deal_official/LICENSE
-
 ```
 
 The directly incorporated implementation files are contained under
@@ -48,12 +48,11 @@ presented as a training-controlled baseline.
 The design of the U-TGV model was informed by:
 
 - Thanh Trung Vu, Andreas Kofler, and Kostas Papafitsoros,
-  “Deep Unrolling for Learning Optimal Spatially Varying Regularisation
-  Parameters for Total Generalised Variation”, 2025.
-- arXiv: https://arxiv.org/abs/2502.16532
-- DOI: https://doi.org/10.1007/978-3-031-92366-1_22
-- Repository:
-  https://github.com/trung-vt/LearningRegularizationParametersForTGV
+  "Deep Unrolling for Learning Optimal Spatially Varying Regularisation
+  Parameters for Total Generalised Variation", 2025.
+- arXiv: <https://arxiv.org/abs/2502.16532>
+- DOI: <https://doi.org/10.1007/978-3-031-92366-1_22>
+- Repository: <https://github.com/trung-vt/LearningRegularizationParametersForTGV>
 
 The upstream repository is licensed under the Apache License 2.0.
 
@@ -62,8 +61,8 @@ neural parameter-map predictor with an unrolled TGV reconstruction solver and
 for interpreting the two learned TGV parameter maps.
 
 The local U-TGV implementation forms part of this dissertation's shared
-PyTorch pipeline. The paper and repository are acknowledged as methodological and software-design influences
-for incorporating the U-TGV model.
+PyTorch pipeline. The paper and repository are acknowledged as methodological
+and software-design influences for incorporating the U-TGV model.
 
 ## 3. Learning regularisation-parameter maps: methodological predecessor
 
@@ -72,13 +71,12 @@ The shared parameter-map and algorithm-unrolling design was also informed by:
 - Andreas Kofler, Fabian Altekrüger, Fatima Antarou Ba, Christoph Kolbitsch,
   Evangelos Papoutsellis, David Schote, Clemens Sirotenko,
   Felix Frederik Zimmermann, and Kostas Papafitsoros,
-  “Learning Regularization Parameter-Maps for Variational Image Reconstruction
-  Using Deep Neural Networks and Algorithm Unrolling”,
+  "Learning Regularization Parameter-Maps for Variational Image Reconstruction
+  Using Deep Neural Networks and Algorithm Unrolling",
   SIAM Journal on Imaging Sciences, 16(4), 2202–2246, 2023.
-- DOI: https://doi.org/10.1137/23M1552486
-- arXiv: https://arxiv.org/abs/2301.05888
-- Repository:
-  https://github.com/koflera/LearningRegularizationParameterMaps
+- DOI: <https://doi.org/10.1137/23M1552486>
+- arXiv: <https://arxiv.org/abs/2301.05888>
+- Repository: <https://github.com/koflera/LearningRegularizationParameterMaps>
 
 The upstream repository is licensed under the Apache License 2.0.
 
@@ -93,16 +91,16 @@ The repository does not redistribute the training or evaluation datasets.
 SeaTurtleID2022 is used for training and validation:
 
 - Lukáš Adam, Vojtěch Čermák, Kostas Papafitsoros, and Lukáš Picek,
-  “SeaTurtleID2022: A Long-Span Dataset for Reliable Sea Turtle
-  Re-Identification”, WACV 2024.
-- DOI: https://doi.org/10.1109/WACV57701.2024.00699
+  "SeaTurtleID2022: A Long-Span Dataset for Reliable Sea Turtle
+  Re-Identification", WACV 2024.
+- DOI: <https://doi.org/10.1109/WACV57701.2024.00699>
 
 DIV2K validation images are used for held-out natural-image evaluation:
 
 - Eirikur Agustsson and Radu Timofte,
-  “NTIRE 2017 Challenge on Single Image Super-Resolution: Dataset and Study”,
+  "NTIRE 2017 Challenge on Single Image Super-Resolution: Dataset and Study",
   CVPR Workshops 2017.
-- DOI: https://doi.org/10.1109/CVPRW.2017.150
+- DOI: <https://doi.org/10.1109/CVPRW.2017.150>
 
 Users must obtain these datasets separately and comply with their respective
 terms of use.
@@ -113,12 +111,10 @@ The MIT licence retained under `src/third_party/deal_official/` applies to the
 vendored DEAL implementation, not automatically to the dissertation's original
 code.
 
-The Apache-2.0 licences of the Trung-Vu and Kofler repositories govern their
-upstream source repositories. Those repositories are acknowledged here as
+The Apache-2.0 licences of the Vu and Kofler repositories govern their upstream
+source repositories. Those repositories are acknowledged here as
 methodological and software influences; their licences do not replace the
 licence status of independently implemented local files.
 
 No general open-source licence is currently granted for the original
 dissertation code.
-```
-

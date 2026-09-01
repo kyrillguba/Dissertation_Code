@@ -1,0 +1,4 @@
+Method,Selected epoch,Val. PSNR,Val. SSIM,Training (h)
+U-TV,277,31.985,0.8768,6.55
+U-TGV,286,31.889,0.8695,16.38
+U-Tikhonov T16/CG32,249,32.143,0.8795,6.90

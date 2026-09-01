@@ -1,0 +1,5 @@
+reference,exact_match,new_only_ids,old_only_ids,dataset_mismatches,image_name_mismatches,sigma_mismatches,noise_seed_mismatches,clean_hash_mismatches,noisy_hash_mismatches,problem
+/Users/kyrillguba/Documents/Data Analytics MSc/Thesis/Python/cleaned_pipeline/results/benchmark_v1_with_official_deal/benchmark_manifest.csv,True,0,0,0,0,0,0,0,0,
+/Users/kyrillguba/Documents/Data Analytics MSc/Thesis/Python/cleaned_pipeline/results/benchmark_v1/benchmark_manifest.csv,True,0,0,0,0,0,0,0,0,
+/Users/kyrillguba/Documents/Data Analytics MSc/Thesis/Python/cleaned_pipeline/results/benchmark_final_frozen/benchmark_manifest.csv,True,0,0,0,0,0,0,0,0,
+/Users/kyrillguba/Documents/Data Analytics MSc/Thesis/Python/cleaned_pipeline/results/benchmark_long_vs_short/benchmark_manifest.csv,True,0,0,0,0,0,0,0,0,

@@ -1,0 +1,5 @@
+Configuration,CG depth,Training time (h),Mean inference (ms/image)
+T4/CG32,32,7.53,61.41
+T16/CG32,32,6.90,60.09
+T4/CG64,64,11.29,109.76
+T16/CG64,64,11.37,114.61

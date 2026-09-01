@@ -1,0 +1,2 @@
+method,sigma,lambda,mse_mean,psnr_mean,ssim_mean,avg_cg_iters,min_cg_iters,max_cg_iters,mean_final_rel_residual
+Scalar Tikhonov,0.1,2.080083823051904,0.00488065835670568,23.771775856018067,0.7493661016225814,27.24,26,28,1.4886715916873073e-06

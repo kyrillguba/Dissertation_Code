@@ -1,0 +1,13 @@
+Thesis item,Notebook coverage,Output
+Table 4.1,added exact CSV/LaTeX export,table_4_1_training_protocol.csv/.tex
+Table 5.1,added exact CSV/LaTeX export,table_5_1_checkpoint_selection.csv/.tex
+Figure 5.1,existing code (starred heading),../final_principal_training_curves.png
+Table 5.2,added exact CSV/LaTeX export,table_5_2_div2k_project_models.csv/.tex
+Figure 5.2,existing code (starred heading),../final_models_quality_vs_noise.png
+Figure 5.4,added exact final-only composite,figure_5_4_final_reconstructions.png
+Figure 5.5,existing code (starred heading),../long_parameter_maps_0843_sigma_0.10.png; ../long_parameter_maps_0869_sigma_0.10.png; ../long_parameter_maps_0896_sigma_0.10.png
+Figure 5.6,existing code (starred heading),../long_parameter_maps_square_gradient_sigma_0.05.png
+Table 5.6,added exact CSV/LaTeX export,table_5_6_square_edge_map_values.csv/.tex
+Figure 5.7,added exact reconstruction/map composite,figure_5_7_square_edge_localisation.png
+Table 5.7,added exact CSV/LaTeX export,table_5_7_computational_cost.csv/.tex
+Table 5.8,added exact CSV/LaTeX export,table_5_8_deal_vs_u_tikhonov.csv/.tex
