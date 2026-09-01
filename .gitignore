@@ -77,3 +77,8 @@ env/
 /results/benchmark_final_frozen/final_minus_short_*.pdf
 /results/benchmark_final_frozen/final_models_geometric_phantom_gallery_sigma_0.05.pdf
 /results/tv_tikhonov_weight_correspondence/
+
+# PDF-only final qualitative figures
+/results/benchmark_final_frozen/long_parameter_maps_*.png
+/results/benchmark_final_frozen/thesis_assets/figure_5_4_final_reconstructions.png
+/results/benchmark_final_frozen/thesis_assets/figure_5_7_square_edge_localisation.png
